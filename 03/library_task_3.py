@@ -28,7 +28,7 @@ def words(dictionary, min_word_length = 3, corpus = []):
                 corpus = corpus + words(dictionary[key])
             else:
                 filter_lamba = lambda x: len(x) > min_word_length +1
-                corpus = corpus + list(filter(filter_lamba, re.sub("[^\w]", " ",  dictionary[key]).split()))
+                corpus = corpus + list(filter(filter_lamba, re.sub("[^\w]", " ",  dictionary[key]).split(',,')))
         return corpus
     else:
         return corpus
